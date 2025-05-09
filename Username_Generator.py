@@ -1,7 +1,6 @@
 import random
 import string
 
-# Updated lists of adjectives and nouns
 adjectives = ["Mighty", "Swift", "Gentle", "Fiery", "Jolly", "Sneaky", "Bold", "Glorious", "Daring", "Vibrant"]
 nouns = ["Falcon", "Shadow", "Rogue", "Wizard", "Lion", "Sphinx", "Gladiator", "Cyclone", "Crusader", "Vortex"]
 
@@ -12,12 +11,12 @@ def generate_username(add_numbers=True, add_special_chars=False, length=12):
     username = adjective + noun
     
     if add_numbers:
-        username += str(random.randint(100, 999))  # 3-digit number for variety
+        username += str(random.randint(100, 999))  
     
     if add_special_chars:
-        username += random.choice("!@#$%^&*")  # Choose from specific symbols
+        username += random.choice("!@#$%^&*") 
     
-    return username[:length]  # Trim if necessary
+    return username[:length] 
 
 def save_to_file(username):
     """Save generated username to a file."""
@@ -31,7 +30,7 @@ def main():
     add_special_chars = input("Include special characters? (yes/no): ").strip().lower() == "yes"
     length = input("Enter desired length (or press Enter for default): ").strip()
     
-    length = int(length) if length.isdigit() else 12  # Default length is 12
+    length = int(length) if length.isdigit() else 12  
     
     username = generate_username(add_numbers, add_special_chars, length)
     
